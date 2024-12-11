@@ -11,76 +11,80 @@
  * “b2”, “0b1”, “123b”, “1234b11”, “3b3”, “-3b5”, “3 b4”, “GbG”, "", null,
  * You should implement the following static functions:
  */
+
 public class Ex1 {
-    /**
-     * Convert the given number (num) to a decimal representation (as int).
-     * It the given number is not in a valid format returns -1.
-     * @param num a String representing a number in basis [2,16]
-     * @return
-     */
+
     public static int number2Int(String num) {
         int ans = -1;
-        // add your code here
+        if (!isNumber(num)) {
+            return ans;
+        }
 
-        ////////////////////
+        String[] parts = num.split("b");
+        String numberPart = parts[0];
+        String basePart = parts[1];
+
+        int base = basePart.matches("[A-G]") ? basePart.charAt(0) - 'A' + 10 : Integer.parseInt(basePart);
+
+        try {
+            ans = Integer.parseInt(numberPart, base);
+        } catch (NumberFormatException e) {
+            ans = -1;
+        }
+
         return ans;
     }
-    /**
-     * This static function checks if the given String (g) is in a valid "number" format.
-     * @param a a String representing a number
-     * @return true iff the given String is in a number format
-     */
+
     public static boolean isNumber(String a) {
-        boolean ans = true;
-        // add your code here
+        if (a == null || a.isEmpty() || !a.contains("b")) return false;
 
-        ////////////////////
-        return ans;
+        String[] parts = a.split("b");
+        if (parts.length != 2) return false;
+
+        String numberPart = parts[0];
+        String basePart = parts[1];
+
+        if (!basePart.matches("[2-9]|10|11|12|13|14|15|16|A|B|C|D|E|F|G")) return false;
+
+        int base = basePart.matches("[A-G]") ? basePart.charAt(0) - 'A' + 10 : Integer.parseInt(basePart);
+
+        for (char c : numberPart.toCharArray()) {
+            if (Character.digit(c, base) == -1) return false;
+        }
+
+        return true;
     }
 
-    /**
-     * Calculate the number representation (in basis base)
-     * of the given natural number (represented as an integer).
-     * If num<0 or base is not in [2,16] the function should return "" (the empty String).
-     * @param num the natural number (include 0).
-     * @param base the basis [2,16]
-     * @return a String representing a number (in base) equals to num, or an empty String (in case of wrong input).
-     */
     public static String int2Number(int num, int base) {
-        String ans = "";
-        // add your code here
+        if (num < 0 || base < 2 || base > 16) return "";
 
-        ////////////////////
-        return ans;
+        String baseRepresentation = base >= 10 ? String.valueOf((char) ('A' + base - 10)) : String.valueOf(base);
+
+        return Integer.toString(num, base) + "b" + baseRepresentation;
     }
 
-    /**
-     * Checks if the two numbers have the same value.
-     * @param n1 first number
-     * @param n2 second number
-     * @return true iff the two numbers have the same values.
-     */
     public static boolean equals(String n1, String n2) {
-        boolean ans = true;
-        // add your code here
+        int val1 = number2Int(n1);
+        int val2 = number2Int(n2);
 
-        ////////////////////
-        return ans;
+        return val1 == val2;
     }
 
-    /**
-     * This static function search for the array index with the largest number (in value).
-     * In case there are more than one maximum - returns the first index.
-     * Note: you can assume that the array is not null and is not empty, yet it may contain null or none-valid numbers (with value -1).
-     * @param arr an array of numbers
-     * @return the index in the array in with the largest number (in value).
-     *
-     */
     public static int maxIndex(String[] arr) {
         int ans = 0;
-        // add your code here
+        int maxVal = Integer.MIN_VALUE;
 
-        ////////////////////
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != null) {
+                int currentVal = number2Int(arr[i]);
+
+                if (currentVal > maxVal) {
+                    maxVal = currentVal;
+                    ans = i;
+                }
+            }
+        }
+
         return ans;
     }
 }
