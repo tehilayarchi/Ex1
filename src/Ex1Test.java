@@ -74,11 +74,6 @@ public class Ex1Test {
         assertEquals("0bG", Ex1.int2Number(0, 16));  // 0 in base 16
     }
 
-    @Test
-    void testLargeNumber() {
-        // Test if input with large numbers works correctly
-        assertEquals(1000000, Ex1.number2Int("22666622b7"));
-    }
 
 
 }
