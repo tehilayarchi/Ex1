@@ -10,40 +10,37 @@ The project provides a set of functions to work with numbers in the `numberPartb
 ### Input and Output Examples
 
 1. **Function `number2Int`**  
-   Converts a string in `numberPartbbasePart` format to an integer:  
-   ```java
+   Converts a string in `numberPartbbasePart` format to an integer:
+   
    Ex1.number2Int("101b2"); // Output: 5
    Ex1.number2Int("10b16"); // Output: 16
    Ex1.number2Int("XYZb16"); // Output: -1 (error)
-   ```
+   
 
-2. **Function `isNumber`**  
-   Checks if a string is in a valid format:  
-   ```java
+3. **Function `isNumber`**  
+   Checks if a string is in a valid format:
+   
    Ex1.isNumber("101b2"); // Output: true
    Ex1.isNumber("123b20"); // Output: false
-   ```
+   
 
-3. **Function `int2Number`**  
-   Converts an integer to the `numberPartbbasePart` format:  
-   ```java
+4. **Function `int2Number`**  
+   Converts an integer to the `numberPartbbasePart` format:
+    
    Ex1.int2Number(5, 2); // Output: "101b2"
    Ex1.int2Number(10, 16); // Output: "Ab16"
-   ```
 
-4. **Function `equals`**  
-   Checks if two strings represent the same value:  
-   ```java
+5. **Function `equals`**  
+   Checks if two strings represent the same value:
+   
    Ex1.equals("101b2", "5b10"); // Output: true
    Ex1.equals("101b2", "10b10"); // Output: false
-   ```
 
-5. **Function `maxIndex`**  
-   Returns the index of the largest string in an array:  
-   ```java
+6. **Function `maxIndex`**  
+   Returns the index of the largest string in an array:
+   
    String[] arr = {"101b2", "10b10", "20b8"};
    Ex1.maxIndex(arr); // Output: 2
-   ```
 
 ---
 
