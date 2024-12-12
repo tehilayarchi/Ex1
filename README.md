@@ -13,7 +13,9 @@ The project provides a set of functions to work with numbers in the `numberPartb
    Converts a string in `numberPartbbasePart` format to an integer:
    
    Ex1.number2Int("101b2"); // Output: 5
+   
    Ex1.number2Int("10b16"); // Output: 16
+   
    Ex1.number2Int("XYZb16"); // Output: -1 (error)
    
 
