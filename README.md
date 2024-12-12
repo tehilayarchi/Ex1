@@ -1,72 +1,64 @@
 # Ex1 Project  
-פרויקט הממיר ומבצע פעולות על מספרים בפורמטים שונים ובבסיסים מגוונים.  
+A project for converting and performing operations on numbers in different formats and bases.
 
-## מטרה  
-הפרויקט מספק סט של פונקציות לעבודה עם מספרים בפורמטים של `numberPartbbasePart`, המייצגים מספרים בבסיסים שונים. הוא ממיר מספרים, בודק חוקיות של קלטים, משווה בין מספרים ומוצא את הערך הגדול ביותר במערך.  
+## Objective  
+The project provides a set of functions to work with numbers in the `numberPartbbasePart` format, representing numbers in various bases. It converts numbers, checks input validity, compares numbers, and finds the maximum value in an array.
 
 ---
 
-## שימוש בסיסי  
-### דוגמאות קלט ופלט  
+## Basic Usage  
+### Input and Output Examples
 
-1. **פונקציה `number2Int`**  
-   ממירה מחרוזת בפורמט `numberPartbbasePart` למספר שלם:  
+1. **Function `number2Int`**  
+   Converts a string in `numberPartbbasePart` format to an integer:  
    ```java
-   Ex1.number2Int("101b2"); // פלט: 5
-   Ex1.number2Int("10b16"); // פלט: 16
-   Ex1.number2Int("XYZb16"); // פלט: -1 (שגיאה)
+   Ex1.number2Int("101b2"); // Output: 5
+   Ex1.number2Int("10b16"); // Output: 16
+   Ex1.number2Int("XYZb16"); // Output: -1 (error)
    ```
 
-2. **פונקציה `isNumber`**  
-   בודקת אם מחרוזת בפורמט חוקי:  
+2. **Function `isNumber`**  
+   Checks if a string is in a valid format:  
    ```java
-   Ex1.isNumber("101b2"); // פלט: true
-   Ex1.isNumber("123b20"); // פלט: false
+   Ex1.isNumber("101b2"); // Output: true
+   Ex1.isNumber("123b20"); // Output: false
    ```
 
-3. **פונקציה `int2Number`**  
-   ממירה מספר שלם לפורמט `numberPartbbasePart`:  
+3. **Function `int2Number`**  
+   Converts an integer to the `numberPartbbasePart` format:  
    ```java
-   Ex1.int2Number(5, 2); // פלט: "101b2"
-   Ex1.int2Number(10, 16); // פלט: "Ab16"
+   Ex1.int2Number(5, 2); // Output: "101b2"
+   Ex1.int2Number(10, 16); // Output: "Ab16"
    ```
 
-4. **פונקציה `equals`**  
-   בודקת אם שתי מחרוזות מייצגות את אותו ערך:  
+4. **Function `equals`**  
+   Checks if two strings represent the same value:  
    ```java
-   Ex1.equals("101b2", "5b10"); // פלט: true
-   Ex1.equals("101b2", "10b10"); // פלט: false
+   Ex1.equals("101b2", "5b10"); // Output: true
+   Ex1.equals("101b2", "10b10"); // Output: false
    ```
 
-5. **פונקציה `maxIndex`**  
-   מחזירה את האינדקס של המחרוזת הגדולה ביותר במערך:  
+5. **Function `maxIndex`**  
+   Returns the index of the largest string in an array:  
    ```java
    String[] arr = {"101b2", "10b10", "20b8"};
-   Ex1.maxIndex(arr); // פלט: 2
+   Ex1.maxIndex(arr); // Output: 2
    ```
 
 ---
 
-## מבנה הפרויקט  
-- **חבילה**: `Ex1Main`  
-- **קובץ קוד עיקרי**:  
-  - `Ex1.java`: מכיל את כל הפונקציות הבאות:  
-    - `number2Int`: ממיר מחרוזת בפורמט בסיס למספר שלם.  
-    - `isNumber`: בודק חוקיות של מחרוזת בפורמט בסיס.  
-    - `int2Number`: ממיר מספר שלם לפורמט בסיס.  
-    - `equals`: משווה בין שני מספרים בפורמט בסיס.  
-    - `maxIndex`: מחפש את הערך הגדול ביותר במערך.  
+## Project Structure  
+- **Package**: `Ex1Main`  
+- **Main Code File**:  
+  - `Ex1.java`: Contains the following functions:  
+    - `number2Int`: Converts a string in base format to an integer.  
+    - `isNumber`: Checks the validity of a string in base format.  
+    - `int2Number`: Converts an integer to a base format string.  
+    - `equals`: Compares two numbers in base format.  
+    - `maxIndex`: Finds the largest value in an array.
 
 ---
 
-## הערות נוספות  
-- הפרויקט מתאים לעבודה עם בסיסים בין 2 ל-16, כולל ייצוג בסיסים מעל 10 באותיות `A` עד `G`.  
-- אם קלט לא תקין, הפונקציות מחזירות ערכי ברירת מחדל: `-1` או מחרוזת ריקה.  
-
----
-
-## איך להריץ את הפרויקט  
-1. הוסיפו את הקובץ `Ex1.java` לפרויקט בג'אווה שלכם.  
-2. הריצו את הפונקציות ישירות דרך מחלקה ראשית או כתבו בדיקות יחידה עם JUnit.  
-
-
+## Additional Notes  
+- The project supports bases between 2 and 16, including bases above 10 represented by letters `A` to `G`.  
+- For invalid inputs, functions return default values: `-1` or an empty string.
