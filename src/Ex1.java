@@ -110,8 +110,9 @@ public class Ex1 {
      * @return a String representing a number (in base) equal to num, or an empty String (if input is invalid)
      */
     public static String int2Number(int num, int base) {
+        String ans ="";
         // Validate inputs
-        if (num < 0 || base < 2 || base > 16) return "";
+        if (num < 0 || base < 2 || base > 16) return ans;
 
         // Determine the representation of the base (e.g., 10 as 'A')
         String baseRepresentation = base >= 10 ? String.valueOf((char) ('A' + base - 10)) : String.valueOf(base);
@@ -127,12 +128,14 @@ public class Ex1 {
      * @return true if the two numbers have the same value
      */
     public static boolean equals(String n1, String n2) {
+        boolean ans = true; // Initialize ans to true by default
+
         // Convert both numbers to decimal values
         int val1 = number2Int(n1);
         int val2 = number2Int(n2);
+        ans = val1 == val2;  // Update ans based on the comparison result
+        return ans;        // Return the value of ans
 
-        // Compare the converted values
-        return val1 == val2;
     }
 
     /**

@@ -77,7 +77,7 @@ public class Ex1Test {
     @Test
     void testLargeNumber() {
         // Test if input with large numbers works correctly
-        assertEquals(1000000, Ex1.number2Int("1000000"));
+        assertEquals(1000000, Ex1.number2Int("22666622b7"));
     }
 
 
